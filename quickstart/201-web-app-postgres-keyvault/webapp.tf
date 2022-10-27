@@ -22,4 +22,5 @@ resource "azurerm_app_service" "webAppFrontend" {
     type  = "MySql"
     value = "Database=${azurerm_mysql_database.webAppBackend.name};Data Source=${azurerm_mysql_server.webAppBackend.fqdn};User Id=${var.administratorLogin}@${azurerm_mysql_server.webAppBackend.name};Password=${var.administratorLoginPassword}"
   }
+  https_only = true
 }
